@@ -14,6 +14,33 @@ A full-stack internal tool for tracking consulting projects, capturing lessons l
 
 ## Getting Started
 
+### Option A · GitHub Codespaces (zero-install)
+
+1. Click **Code → Codespaces → Create codespace on main** in the GitHub UI.
+2. The devcontainer will automatically install all Python and Node.js dependencies.
+3. Open two terminal tabs and start each server:
+
+   ```bash
+   # Terminal 1 – backend
+   cd backend
+   uvicorn main:app --reload --host 0.0.0.0 --port 8000
+   ```
+
+   ```bash
+   # Terminal 2 – frontend
+   cd frontend
+   npm run dev
+   ```
+
+4. Codespaces will detect the open ports and show **Open in Browser** notifications.  
+   The frontend (port 5173) opens automatically; the backend API docs are at port 8000 (`/docs`).
+
+> **Note:** The frontend's `/api/*` proxy targets `http://localhost:8000`, which resolves correctly inside the Codespace container.
+
+---
+
+### Option B · Local development
+
 ### Prerequisites
 
 - **Python 3.11+**
