@@ -10,10 +10,6 @@ export default function ProjectList({ projects, loading, selectedId, onSelect })
     )
   }
 
-  if (error) {
-    return <div className="error-banner">⚠️ {error}</div>
-  }
-
   if (projects.length === 0) {
     return (
       <div className="empty-state">
